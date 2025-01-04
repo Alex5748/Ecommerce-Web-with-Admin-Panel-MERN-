@@ -24,7 +24,7 @@ function AuthLogin() {
             className="font-medium text-primary hover:underline ml-2"
             to="/auth/register"
           >
-            Login
+            Sign In
           </Link>
         </p>
       </div>
