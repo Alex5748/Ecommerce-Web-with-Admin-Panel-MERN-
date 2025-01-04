@@ -15,10 +15,11 @@ import ShoppingCheckout from "./pages/Shopping-View/checkout";
 import ShoppingAccount from "./pages/Shopping-View/account";
 import CheckAuth from "./components/common/check-auth";
 import UnauthPage from "./pages/unauth-page";
+import { useSelector } from "react-redux";
 
 function App() {
-  const isAuthenticated = false;
-  const user = null;
+  const { user, isAuthenticated } = useSelector((state) => state.auth);
+
   return (
     <div className="flex flex-col overflow-hidden bg-white">
       <Routes>

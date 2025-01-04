@@ -25,8 +25,13 @@ function AuthRegister() {
         toast({
           title: data?.payload?.meassage,
         });
+        navigate("/auth/login");
+      } else {
+        toast({
+          title: data?.payload?.meassage,
+          variant: "destructive",
+        });
       }
-      navigate("/auth/login");
     });
   }
   console.log(formData);
