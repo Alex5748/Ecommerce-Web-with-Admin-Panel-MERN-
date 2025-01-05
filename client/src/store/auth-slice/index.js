@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const initialState = {
     isAuthenticated: false,
-    isLoading: false,
+    isLoading: true,
     user: null
 };
 
@@ -41,6 +41,24 @@ export const loginUser = createAsyncThunk(
     }
   );
 
+  export const checkAuth = createAsyncThunk(
+    "/auth/checkauth",
+  
+    async (formData) => {
+      const response = await axios.get("http://localhost:5000/api/auth/check-auth",
+        {
+          withCredentials: true,
+          headers: {
+            'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate', Expires: '0'
+          }
+        }
+        
+      );
+  
+      return response.data;
+    }
+);
+  
 
 
 const authSlice = createSlice({
@@ -68,17 +86,30 @@ const authSlice = createSlice({
             })
             .addCase(loginUser.pending, (state,) => {
                 state.isLoading= true
-                        })
-                        .addCase(loginUser.fulfilled, (state, action) => {
+            })
+            .addCase(loginUser.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.user = action.payload.success ? action.payload.user:null ;
                 state.isAuthenticated= action.payload.success 
-                        })
-                        .addCase(loginUser.rejected, (state, action) => {
+            })
+            .addCase(loginUser.rejected, (state, action) => {
                         state.isLoading = false;
                         state.user = null;
                         state.isAuthenticated=false
-                            })
+            })
+            .addCase(checkAuth.pending, (state,) => {
+              state.isLoading= true
+          })
+          .addCase(checkAuth.fulfilled, (state, action) => {
+              state.isLoading = false;
+              state.user = action.payload.success ? action.payload.user:null ;
+              state.isAuthenticated= action.payload.success 
+          })
+          .addCase(checkAuth.rejected, (state, action) => {
+                      state.isLoading = false;
+                      state.user = null;
+                      state.isAuthenticated=false
+          })
     }
     
 });
