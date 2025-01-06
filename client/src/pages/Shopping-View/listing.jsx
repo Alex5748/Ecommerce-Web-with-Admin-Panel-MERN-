@@ -1,7 +1,6 @@
-
-// import ProductFilter from "@/components/shopping-view/filter";
-// import ProductDetailsDialog from "@/components/shopping-view/product-details";
-// import ShoppingProductTile from "@/components/shopping-view/product-tile";
+import ProductFilter from "@/components/shopping-view/filter";
+import ProductDetailsDialog from "@/components/shopping-view/product-details";
+import ShoppingProductTile from "@/components/shopping-view/product-tile";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -13,7 +12,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 
 // import { sortOptions } from "@/config";
-// import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
+import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 // import {
 //   fetchAllFilteredProducts,
 //   fetchProductDetails,
@@ -21,7 +20,7 @@ import { useToast } from "@/hooks/use-toast";
 import { ArrowUpDownIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 // function createSearchParamsHelper(filterParams) {
 //   const queryParams = [];
