@@ -12,7 +12,7 @@ export const addNewProduct = createAsyncThunk(
   async (formData) => {
     const result = await axios.post(
       "http://localhost:5000/api/admin/products/add",
-      formData,
+      {formData},
       {
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export const editProduct = createAsyncThunk(
   async ({ id, formData }) => {
     const result = await axios.put(
       `http://localhost:5000/api/admin/products/edit/${id}`,
-      formData,
+      {formData},
       {
         headers: {
           "Content-Type": "application/json",

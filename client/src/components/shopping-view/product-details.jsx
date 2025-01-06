@@ -11,7 +11,7 @@ import { setProductDetails } from "@/store/shop/products-slice";
 import { Label } from "../ui/label";
 import StarRatingComponent from "../common/star-rating";
 import { useEffect, useState } from "react";
-import { addReview, getReviews } from "@/store/shop/review-slice";
+import { addReview, getReviews } from "../../store/shop/review-slice";
 
 function ProductDetailsDialog({ open, setOpen, productDetails }) {
   const [reviewMsg, setReviewMsg] = useState("");

@@ -1,7 +1,7 @@
 import ProductFilter from "@/components/shopping-view/filter";
 import ProductDetailsDialog from "@/components/shopping-view/product-details";
 import ShoppingProductTile from "@/components/shopping-view/product-tile";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,32 +11,32 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useToast } from "@/hooks/use-toast";
 
-// import { sortOptions } from "@/config";
+import { sortOptions } from "../../config/index";
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
-// import {
-//   fetchAllFilteredProducts,
-//   fetchProductDetails,
-//} from "@/store/shop/products-slice";
+import {
+  fetchAllFilteredProducts,
+  fetchProductDetails,
+} from "@/store/shop/products-slice";
 import { ArrowUpDownIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 
-// function createSearchParamsHelper(filterParams) {
-//   const queryParams = [];
+function createSearchParamsHelper(filterParams) {
+  const queryParams = [];
 
-//   for (const [key, value] of Object.entries(filterParams)) {
-//     if (Array.isArray(value) && value.length > 0) {
-//       const paramValue = value.join(",");
+  for (const [key, value] of Object.entries(filterParams)) {
+    if (Array.isArray(value) && value.length > 0) {
+      const paramValue = value.join(",");
 
-//       queryParams.push(`${key}=${encodeURIComponent(paramValue)}`);
-//     }
-//   }
+      queryParams.push(`${key}=${encodeURIComponent(paramValue)}`);
+    }
+  }
 
-//   console.log(queryParams, "queryParams");
+  console.log(queryParams, "queryParams");
 
-//   return queryParams.join("&");
-// }
+  return queryParams.join("&");
+}
 
 function ShoppingListing() {
   const dispatch = useDispatch();
