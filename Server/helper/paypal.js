@@ -10,8 +10,8 @@ const { Client, Environment, LogLevel } = require("@paypal/paypal-server-sdk");
 
 const paypal = new Client({
     clientCredentialsAuthCredentials: {
-        oAuthClientId: 'Ad2BOrWkTnE7QT5yUlQDV0Z_FqDDKE1wrbeJcqbIYPCVQ0VtP-WHqbhBcklU1gAZm92T-xwTia0vZsom',
-        oAuthClientSecret: 'ECzd9akQQvlkUPcVdK8Ri4Boc4oalBSnulwxYQxcFXUlIvhkmluXz1LSTXykgtDymLtGo_4Ds6dredOX',
+        oAuthClientId: '',
+        oAuthClientSecret: '',
     },
     timeout: 0,
     environment: Environment.Sandbox,
