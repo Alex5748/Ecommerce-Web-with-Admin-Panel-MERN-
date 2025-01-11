@@ -18,7 +18,7 @@ const commonFeatureRouter = require('./routes/common/feature-routes')
 
 // create a database connection  -> u can also
 // create a separate file for this and then import/ use that file here 
-mongoose.connect('mongodb+srv://abpalex05:abpalex05@cluster0.crgux.mongodb.net/').then(() => console.log('MongoDB connected')).catch(error=>console.log(error));
+mongoose.connect('').then(() => console.log('MongoDB connected')).catch(error=>console.log(error));
 
 
 const app = express()
